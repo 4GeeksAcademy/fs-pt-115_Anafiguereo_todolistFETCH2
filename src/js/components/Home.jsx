@@ -1,26 +1,35 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 //include images into your bundle
 import rigoImage from "../../img/rigo-baby.jpg";
 
 //create your first component
-const Home = () => {
-	return (
-		<div className="text-center">
-            
 
-			<h1 className="text-center mt-5">Hello Rigo!</h1>
-			<p>
-				<img src={rigoImage} />
-			</p>
-			<a href="#" className="btn btn-success">
-				If you see this green button... bootstrap is working...
-			</a>
-			<p>
-				Made by{" "}
-				<a href="http://www.4geeksacademy.com">4Geeks Academy</a>, with
-				love!
-			</p>
+//Primero traemos la información por si hay algo ya
+// Creamos la funcionalidad para trabajar sobre ella
+
+
+const Home = () => {
+
+	const url = "https://playground.4geeks.com/todo"
+	
+	const getTodos = async () => {
+		// fetch e para trabajar con la api
+		const response = fetch(url+"/users/Ana")
+		if (!response.ok) {
+			alert("The user is not created")
+		}
+		const data = await response.json()
+		console.log(data)
+	}
+	useEffect(()=> {getTodos()}, [] )
+	return (
+		<div>
+			<div>
+				<li>
+					
+				</li>
+			</div>
 		</div>
 	);
 };
