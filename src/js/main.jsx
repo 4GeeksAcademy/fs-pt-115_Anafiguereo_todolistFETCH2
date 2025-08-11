@@ -5,6 +5,8 @@ import ReactDOM from 'react-dom/client'
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap"
 
+// Google-Fonts
+
 // index.css'
 import '../styles/index.css'
 
