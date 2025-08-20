@@ -29,10 +29,11 @@ const Home = () => {
 		const response = await fetch(url + "/users/Ana")
 		if (!response.ok) {
 			createUser()
-		}
+		} else {	
 		const data = await response.json()
 		// aqui especificamos que nos traiga las tareas (todos) de data
 		setTodos(data.todos)
+		}
 	}
 
 	// CREAMOS TAREAS
@@ -67,9 +68,6 @@ const Home = () => {
 	useEffect(() => { getTodos() }, []) //El useEffect abajo de los pasos a relizar
 	return (
 		<div>
-			<link rel="preconnect" href="https://fonts.googleapis.com"/>
-			<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-			<link href="https://fonts.googleapis.com/css2?family=Alumni+Sans+Pinstripe:ital@0;1&display=swap" rel="stylesheet"/>
 				<h1 className="d-flex justify-content-center align-items-center" style={{ color: "pink", fontSize: "150px", marginTop: "20px", fontFamily: "Alumni Sans Pinstripe" }}>
 						Todos</h1>
 				<div className="d-flex justify-content-center align-items-center" style={{ marginBottom: "10px" }} >
@@ -98,4 +96,4 @@ const Home = () => {
 	);
 };
 
-				export default Home;
+export default Home;
